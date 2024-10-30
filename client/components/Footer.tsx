@@ -1,10 +1,4 @@
-import {styled} from 'styled-components';
-
-const Wrapper  = styled.section`
-  /* max-width: 1220px; */
-  /* width: 100%; */
-  /* margin: 0 auto; */
-`;
+import Wrapper from "@/components/styled/Wrapper"
 
 
 
@@ -13,7 +7,7 @@ const Footer = () => {
         <footer>
             <Wrapper>
                 <p>
-                Copyright © 2024 - All rights reserved || Designed By: Danil
+                    Copyright © 2024 - All rights reserved || Designed By: Danil
                 </p>
             </Wrapper>
         </footer>

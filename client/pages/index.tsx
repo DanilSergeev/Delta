@@ -14,9 +14,9 @@ export default function Home() {
         Узнайте о культуре и истории самых популярных городов России."
     >
       <>
-        {/* <HeroSection />
+        <HeroSection />
         <PopularCitiesSection />
-        <ContactSection /> */}
+        <ContactSection />
       </>
     </MainContainer>
   );
