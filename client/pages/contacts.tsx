@@ -1,26 +1,32 @@
-import MainContainer from "@/components/styled/MainContainer"
+import FlexWrapper from "@/components/styled/FlexWrapper";
+import MainContainer from "@/components/styled/MainContainer";
+import Section from "@/components/styled/Section";
+import MassageForm from '@/components/MassageForm';
+
 
 const ContactsPage = () => {
+
+    const onSubmit = async () => {
+
+    };
+
     return (
-        <MainContainer >
-            <>
-            <h2>Only CTA on the page</h2>
-            <form>
-                <p>Name</p>
-                <input type="text" />
-                <p>Email</p>
-                <input type="text" />
-                <p>Message</p>
-                <textarea />
-                <button></button>
-            </form>
+        <MainContainer>
+            <MassageForm />
 
+            <Section>
+                <FlexWrapper flex='column' align='center'>
+                    <h2>Thank you for your interest, Name</h2>
+                </FlexWrapper>
+            </Section>
 
-            <h2>'Thank you for your interest, Name</h2>
-
-            </>
+            <Section >
+                <FlexWrapper flex='column' align='center'>
+                    <h2>CADEX</h2>
+                </FlexWrapper>
+            </Section>
         </MainContainer>
-    )
+    );
 }
 
-export default ContactsPage
+export default ContactsPage;
