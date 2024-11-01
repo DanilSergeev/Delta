@@ -44,13 +44,32 @@ h4{
 }
 
 p{
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .error-message {
     color: red;
     font-size: 0.875em;
     margin-top: 0.25em;
+}
+
+
+@media ${props => props.theme.media.tablet} {
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 30px; 
+  }
+
+  h4 {
+    font-size: 24px; 
+  }
 }
 
 `;

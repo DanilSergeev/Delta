@@ -1,23 +1,12 @@
 import { styled } from 'styled-components';
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import Wrapper from './Wrapper';
+import { IGridProps } from '@/models/IGridProps';
 
-interface GridProps {
-  templateColumns?: string;
-  templateRows?: string;
-  gap?: string;
-  justifyItems?: 'start' | 'end' | 'center' | 'stretch';
-  alignItems?: 'start' | 'end' | 'center' | 'stretch';
-  textAlign?: 'center' | 'left' | 'justify' | 'right';
 
-  mt?: string;
-  mb?: string;
-  children: ReactNode;
-}
-
-const GridStyled = styled(Wrapper)<GridProps>`
+const GridStyled = styled(Wrapper) <IGridProps>`
   display: grid;
-  grid-template-columns: ${props => props.templateColumns || '1fr'};
+  grid-template-columns: ${props => props.$templateColumns || '1fr'};
   grid-template-rows: ${props => props.templateRows || 'auto'};
   gap: ${props => props.gap || '1rem'};
   justify-items: ${props => props.justifyItems || 'stretch'};
@@ -26,10 +15,19 @@ const GridStyled = styled(Wrapper)<GridProps>`
   
   margin-top: ${props => props.mt || '0'};
   margin-bottom: ${props => props.mb || '0'};
+
+
+  @media ${props => props.theme.media.tablet} {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 80%;
+
+  }
+
 `;
 
-const GridWrapper: FC<GridProps> = ({ ...props }) => {
-  return <GridStyled {...props} />;
+const GridWrapper: FC<IGridProps> = ({ ...props }) => {
+  return <GridStyled  {...props} />;
 };
 
 export default GridWrapper;

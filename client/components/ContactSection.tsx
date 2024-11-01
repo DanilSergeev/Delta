@@ -11,6 +11,7 @@ const ContactSection = () => {
             <FlexWrapper
                 flex="column"
                 align="center"
+                $textAlign="center"
             >
                 <h2>Хотите узнать больше о путешествиях по России?</h2>
                 <Link href="/contacts">

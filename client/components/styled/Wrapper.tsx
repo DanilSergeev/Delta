@@ -1,10 +1,7 @@
+import { WrapperProps } from '@/models/IWrapperProps';
 import {styled} from 'styled-components';
 
 
-interface WrapperProps {
-  mt?: string;
-  mb?: string;
-}
 
 
 const Wrapper  = styled.div<WrapperProps>`

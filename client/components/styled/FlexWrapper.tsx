@@ -1,22 +1,8 @@
 import { styled } from 'styled-components';
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import Wrapper from './Wrapper';
+import { FlexProps } from '@/models/IFlexProps';
 
-interface FlexProps {
-  align?: 'flex-start' | 'center' | 'flex-end' | 'stretch';
-  flex?: 'row' | 'column';
-  justify?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
-  wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
-  /** Indicates whether the width of child elements is equal (accepts "true" as a string) */
-  $isEqualWidth?: string;
-  mt?: string;
-  mb?: string;
-  pt?: string;
-  pb?: string;
-  gap?: string;
-  textAlign?: 'center' | 'left' | 'justify' | 'right';
-  children: ReactNode;
-}
 
 const FlexStyled = styled(Wrapper) <FlexProps>`
   display: flex;
@@ -29,7 +15,7 @@ const FlexStyled = styled(Wrapper) <FlexProps>`
   padding-top: ${props => props.pt || '0'};
   padding-bottom: ${props => props.pb || '0'};
   gap: ${props => props.gap || '0'};
-  text-align: ${props => props.textAlign || 'left'};
+  text-align: ${props => props.$textAlign || 'left'};
 
 
   ${props => props.$isEqualWidth && `
@@ -37,6 +23,18 @@ const FlexStyled = styled(Wrapper) <FlexProps>`
       flex: 1;
     }
   `}
+
+
+@media ${props => props.theme.media.tablet} {
+    max-width: 80%;
+    flex-direction: column;
+    gap: 1rem;
+
+    ${props => props.align === "center"?  `
+     align-items: center;
+  `:"align-items: stretch;"}
+  }
+
 
 `;
 

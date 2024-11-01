@@ -6,6 +6,12 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Button } from 'react-bootstrap';
 import { StyledInput, StyledTextArea } from "@/components/styled/StyledInput";
 import { Form, FormGroup } from "@/components/styled/Form";
+import { IFormData } from '@/models/IFormData';
+
+
+interface MassageFormProps {
+    onSubmit: (data: IFormData) => Promise<void>;
+}
 
 const schema = yup.object().shape({
     name: yup.string().required('Поле имя обязательно'),
@@ -13,14 +19,11 @@ const schema = yup.object().shape({
     message: yup.string().required('Поле сообщение обязательно'),
 });
 
-const MassageForm = () => {
+const MassageForm = ({ onSubmit }: MassageFormProps) => {
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm({
         resolver: yupResolver(schema),
     });
 
-    const onSubmit = async () => {
-
-    };
 
     return (
         <Section

@@ -1,16 +1,10 @@
 import { styled } from 'styled-components';
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
+import { ISectionProps } from '@/models/ISectionProps';
 
-interface SectionProps {
-  mt?: string;
-  mb?: string;
-  pt?: string;
-  pb?: string;
-  bg?: string;
-  children: ReactNode;
-}
 
-const SectionStyled = styled.section <SectionProps>`
+
+const SectionStyled = styled.section <ISectionProps>`
   margin-top: ${props => props.mt || '0'};
   margin-bottom: ${props => props.mb || '0'};
   padding-top: ${props => props.pt || '7vh'};
@@ -18,7 +12,7 @@ const SectionStyled = styled.section <SectionProps>`
   background-color: ${props => props.bg || 'unset'};
 `;
 
-const Section: FC<SectionProps> = ({ ...props }) => {
+const Section: FC<ISectionProps> = ({ ...props }) => {
   return <SectionStyled {...props} />;
 };
 
