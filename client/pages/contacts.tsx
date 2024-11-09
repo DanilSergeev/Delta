@@ -54,7 +54,7 @@ const ContactsPage = () => {
 
             <Section>
                 <FlexWrapper mt="auto" flex='column' align='center'>
-                    <h2>CADEX</h2>
+                    <h2>Delta</h2>
                 </FlexWrapper>
             </Section>
         </MainContainer>
